@@ -1,0 +1,2 @@
+# ocrResult
+ocrResult = ""

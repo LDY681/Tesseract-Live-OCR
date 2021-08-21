@@ -2,6 +2,7 @@
 import pyautogui
 import datetime
 import threading
+import ocr
 class ScreenShot:
     def __init__(self):
         self.x1 = 0
@@ -46,9 +47,10 @@ class ScreenShot:
     def takeBoundedScreenShot(self):
         im = pyautogui.screenshot(region=(self.x1, self.y1, self.x2, self.y2))
         x = datetime.datetime.now()
-        fileName = x.strftime("%f")
-        print("Running takeBoundedScreenShot: ", fileName)
-        im.save(fileName + ".png")
+        fileName = x.strftime("%f") + ".png" 
+        # print("Running takeBoundedScreenShot: ", fileName)
+        im.save(fileName)
+        ocr.imageToText(fileName)
 
 # Extended Function for set interval
 def set_interval(func, sec):

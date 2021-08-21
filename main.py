@@ -10,6 +10,8 @@
 from tkinter import *
 import screenshot
 import cards
+import sharedData
+
 class Application():
     def __init__(self, master):
         self.master = master
@@ -120,13 +122,22 @@ class Application():
                     e.grid(column=x, row=y+1)
                     e.insert(0,cardData[y][x])
 
+    def countdown(self, root):
+        self.addNewText()
+        root.after(1000, self.countdown, root)  # repeat the call
+
     ## textarea
     def createRecordTextarea(self):
         # create data table frame 
         self.textarea = Text(self.menu_frame, height=4, width=50)
         self.textarea.pack(fill=BOTH,expand=YES)
-
         self.textarea.insert(END, "Welcome to SDT")
+        root.after(0, self.countdown, root)  # show that we are alive
+    
+    def addNewText(self):
+        self.textarea.delete('1.0', END)
+        print(sharedData.ocrResult)
+        self.textarea.insert(END, sharedData.ocrResult)
 
     def exit_application(self):
         root.quit()
