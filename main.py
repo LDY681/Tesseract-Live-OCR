@@ -84,7 +84,8 @@ class Application():
         print(self.start_y)
         print(self.curX)
         print(self.curY)
-        screenshot.recPosition(self.start_x, self.start_y, self.curX, self.curY)
+        myScreenshot = screenshot.ScreenShot()
+        myScreenshot.recPosition(self.start_x, self.start_y, self.curX, self.curY)
         # set opacity, destroy button and create data table and record textarea
         root.attributes('-alpha', 0.7)
         self.buttonBar.destroy()
