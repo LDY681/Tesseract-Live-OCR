@@ -136,8 +136,9 @@ class Application():
     
     def addNewText(self):
         self.textarea.delete('1.0', END)
-        print(sharedData.ocrResult)
-        self.textarea.insert(END, sharedData.ocrResult)
+        # print(sharedData.ocrResult)
+        self.textarea.insert(END, '\n'.join("{0}".format(id) for id in sharedData.ocrResult))
+        self.textarea.see("end")
 
     def exit_application(self):
         root.quit()
