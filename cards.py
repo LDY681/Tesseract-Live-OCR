@@ -1,9 +1,9 @@
   
-############## SDT cards functionalities ###############
+############## SDT Cards Functionality ###############
 #
 # Author: Dayu Liu
 # Date: 8/12/21
-# Description: Maintain cards pool
+# Description: Initialize and maintain the cards pool
 #
 
 class Cards:

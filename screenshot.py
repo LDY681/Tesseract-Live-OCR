@@ -1,3 +1,12 @@
+############## SDT Screenshot Functionality ###############
+#
+# Author: Dayu Liu
+# Date: 8/12/21
+# Description: Constantly take screenshot from a user selected area
+# Step 1: User drag and draw a yellow rectangle on screen
+# Step 2: Get the positions of 4 cornors to construct our screenshot area
+# Step 3: Constantly take screenshot from this area and tell OCR.py to OCR from it
+#
 
 import pyautogui
 import datetime
